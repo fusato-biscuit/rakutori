@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h3>アカウントの作成に成功しました！</h3>
+
+<p>ユーザー名：{{ request.user.username }}</p>
+<p>学籍番号：{{ request.user.student_id }}</p>
+
+<p>上手く動作していない、学籍番号を間違えて登録してしまった等の</p>
+<p>お問い合わせはコチラのアドレス宛に送信お願いします。</p>
+
+<p>メールアドレス</p>
+
+
+{% endblock %}

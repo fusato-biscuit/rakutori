@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% load static %}
+
+{% block content %}
+
+<p>ユーザー名：{{ request.user.username }}</p>
+<p>学籍番号：{{ request.user.student_id }}</p>
+
+<form action="" method="post">{% csrf_token %}
+  <button class="btn btn-primary col-6 offset-3 mt-3" type="submit">出席する</button>
+</form>
+
+{% endblock %}

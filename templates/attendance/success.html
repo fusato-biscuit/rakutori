@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% load static %}
+
+{% block content %}
+
+{{ request.user.username }}
+<p>学籍番号：{{ request.user.student_id }}</p>
+<h3>出席確認完了しました。</h3>
+
+{% endblock %}

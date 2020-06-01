@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% load static %}
+
+{% block content %}
+
+
+  <div class="row col-2 offset-5 my-5">
+    <img src="{% static 'image_material/cube.jpg' %}" class="img-fluid"   alt="Cube-image">
+  </div>
+
+  {% if request.user.is_authenticated %}
+    <p>あなたは既にログインしています。</p>
+
+  {% else %}
+
+
+  <div class="col-8 offset-2 my-3">
+    <form action="" method="post">{% csrf_token %}
+      {% if form.errors %}
+          <p class="text-danger">usernameかpasswordが間違っています。再度お試しください。</p>
+      {% endif %}
+
+      <div class="mb-3">
+        <label>username</label>
+        {{ form.username|add_class:"form-control" }}
+      </div>
+      <div class="mb-3">
+        <label>password</label>
+        {{ form.password|add_class:"form-control" }}
+      </div>
+
+      <button class="btn btn-outline-primary col-6 offset-3 mt-3" type="submit">Login</button>
+    </form>
+  </div>
+
+    <p class="border-top border-dark rounded text-center pt-2 mt-5">まだアカウントをお持ちでない方はコチラ</p>
+    <a href="{% url 'user_manage:signup' %}" class="btn btn-outline-primary col-4 offset-4  mb-5">Create Account</a>
+
+{% endif %}
+
+{% endblock %}

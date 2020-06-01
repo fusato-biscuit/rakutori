@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+<form action="{% url 'user_manage:signup' %}" method="post">{% csrf_token %}
+  <div class="form-group col-8 offset-2 mt-4">
+    <label>ユーザー名</label>
+    {{ form.username|add_class:"form-control" }}
+    {{ form.username.errors }}
+  </div>
+
+  <div class="form-group col-8 offset-2">
+    <label>学籍番号　例→ 18BA103</label>
+    {{ form.student_id|add_class:"form-control" }}
+    {{ form.student_id.errors }}
+  </div>
+
+  <div class="form-group col-8 offset-2">
+    <label>パスワード</label>
+    {{ form.password1|add_class:"form-control" }}
+    {{ form.password1.errors }}
+  </div>
+
+  <div class="form-group col-8 offset-2">
+    <label>パスワード(確認)</label>
+    {{ form.password2|add_class:"form-control" }}
+    {{ form.password2.errors }}
+  </div>
+
+  <div class="form-group col-3 offset-2">
+    <label>性別</label>
+    {{ form.gender|add_class:"form-control" }}
+    {{ form.gender.errors }}
+  </div>
+
+  <div class="form-group col-3 offset-2">
+    <label>学年</label>
+    {{ form.grade|add_class:"form-control" }}
+    {{ form.grade.errors }}
+  </div>
+
+  <input type="submit" class="btn btn-outline-primary col-6 offset-3 my-3" value="Sigin Up">
+</form>
+
+{% endblock %}
