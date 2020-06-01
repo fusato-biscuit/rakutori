@@ -1,1 +1,1 @@
-web: gunicorn rakutori.wsgi --log-file -
+web: gunicorn base_rakutori.wsgi --log-file -
