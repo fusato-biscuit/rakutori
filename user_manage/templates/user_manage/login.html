@@ -7,10 +7,6 @@
 {% block content %}
 
 
-  <div class="row col-2 offset-5 my-5">
-    <img src="{% static 'image_material/cube.jpg' %}" class="img-fluid"   alt="Cube-image">
-  </div>
-
   {% if request.user.is_authenticated %}
     <p>あなたは既にログインしています。</p>
 
