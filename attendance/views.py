@@ -83,7 +83,7 @@ def output_to_excel(request):
     sorted_day = sorted(set_day)
     sorted_id = sorted(set_id)
     lists = [[j,[1 if Uezu_seminar.objects.filter(student_id=j, attended_day=i) else 0 for i in sorted_day]] for j in sorted_id]
-    book = xlsxwriter.Workbook('excel/Uezu_seminar.xlsx')
+    book = xlsxwriter.Workbook('static/excel/Uezu_seminar.xlsx')
     sheet = book.add_worksheet('NewSheet1')
     c = 1
     for i in sorted_day:
